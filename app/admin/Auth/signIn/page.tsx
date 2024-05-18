@@ -13,7 +13,7 @@ export default function SignIn() {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:4000/admin/login', {
+      const response = await axios.post('http://localhost:4000/admin/login',{
         email,
         password,
       });
@@ -27,13 +27,14 @@ export default function SignIn() {
         setError('Login failed');
       }
     } catch (error) {
+      console.log("this is ",error)
       setError('Invalid User');
     }
   };
 
   return (
     <div className="container mx-auto flex items-center justify-center h-screen">
-    <div className="bg-white p-8 rounded-lg shadow-md">
+    <div className="bg-gray-400/25 p-8 rounded-lg shadow-md">
       <h1 className="text-3xl font-semibold mb-6 text-center">Sign In</h1>
       <div className="w-full">
         <input
@@ -58,6 +59,7 @@ export default function SignIn() {
         </button>
         {error && <p className="text-red-500 mt-2 text-center">{error}</p>}
       </div>
+      <span className = "mt-10">Don't have an account? <a className="text-blue-600 underline" href="/Auth/signUp/">SignUp</a></span>
     </div>
   </div>
   );

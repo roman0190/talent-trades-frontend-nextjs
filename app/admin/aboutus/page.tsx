@@ -17,7 +17,7 @@ export default function AboutUs() {
       </div>
       <div className="mt-8">
         <Link href="/Auth/signIn">
-          <div className="text-blue-500 hover:underline">Back to Home</div>
+          <div className="text-blue-500 hover:underline">---->Back</div>
         </Link>
       </div>
     </div>
