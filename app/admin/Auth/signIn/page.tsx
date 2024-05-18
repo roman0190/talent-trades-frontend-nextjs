@@ -24,7 +24,7 @@ export default function SignIn() {
             const { access_token } = response.data;
 
             if (access_token) {
-                localStorage.setItem("Token", access_token);
+                sessionStorage.setItem("Token", access_token);
                 window.location.href = "/profile";
             } else {
                 setError("Login failed");
